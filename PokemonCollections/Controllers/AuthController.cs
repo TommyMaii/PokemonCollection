@@ -12,7 +12,7 @@ namespace PokemonCollections.Controllers;
 public class AuthController : ControllerBase
 {
     [Authorize]
-    [HttpGet]
+    [HttpGet ("GetUserId")]
     public IActionResult GetUserId()
     {
         var user = User.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).FirstOrDefault().Value;
